@@ -1,10 +1,99 @@
+#container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex; /* equal height of the children */
+    flex-wrap: wrap; /* allow wrapping items  */
+    text-align: left;
+}
 
+#left {
+    float: left;
+    width: 500px;
+    display: inline-block;
+    /*border-right: solid;*/
+    /*border-width:1px;*/
+}
+
+#right {
+    float: left;
+    display: inline-block;
+    width: 300px;
+    background: #F0F0F0;
+}
 
 button.closeX {
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;
+    outline: none;
 }
+
+button.linkLooking {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    color: #069;
+    /*text-decoration:underline;*/
+    cursor: pointer;
+}
+
+input {
+    margin-top: 10px;
+}
+
+.round {
+    /* css 3 */
+    border-radius:5px;
+    /* mozilla */
+    -moz-border-radius:5px;
+    /* webkit */
+    -webkit-border-radius:5px;
+    /*box-shadow: 0px 0px 0px 0px #666;*/
+
+}
+
+#buttonsLine {
+    width: 100%;
+    text-align: left;
+}
+
+.len1 {
+    width: 90%;
+}
+
+#rightHint {
+    display: inline-block;
+    width: 90%;
+    background: lightgray;
+}
+
+#optionsButton {
+    width: 100px;
+    float: right;
+}
+
+#msgBtnSave {
+    background: navy;
+    color: white;
+}
+
+.paddingLeft {
+
+    margin-left: 5%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.inner {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.answerText {
+    padding-right: 5px;
+    width: 80%;
+}
+
+

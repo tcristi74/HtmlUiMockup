@@ -1,76 +1,123 @@
 <!DOCTYPE html>
-<html  lang="en">
-<title>
-    Editing questions
-</title>
+<html lang="en">
+
 <head>
-
-
+    <title>
+        Editing questions
+    </title>
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
 </head>
 
 <body>
 
-body page
+<main id="container">
 
-<main>
-    <div>
-        <div>
-            <div>
-                Editing Question
-            </div>
-            <div>
-                Options
-            </div>
-            <div>
-                <label>Short Description</label><br/>
-                <input type="text" name="reactionType" value="Types of Reactions"><br>
+        <div id="left">
+            <div class="paddingLeft" id="div1left">
+                <h3>Editing Question</h3>
                 <p>
-                    <label>Question Text*</label><br/>
+                <div id="optionsButton">
+                    <button class="linkLooking" onclick="ShowHideDiv('div2left')">Options &#8744;</button>
+                </div>
+                <br>
+                <p>
+                    <label for="reactionType">Short Description</label><br/>
+                    <input class="round len1"  type="text" id="reactionType" value="Types of Reactions"/><br>
+                <p>
+                    <label for="descriptionTxtArea">Question Text*</label><br/>
 
-                    <textarea id="descriptTxtArea" rows="2" cols="50">
-    A reaction between an acid and a base is called a.
-</textarea>
-            </p>
-                <label>Answers*</label><br/>
-            <table>
-                <tr>
-                    <td>=</td>
-                    <td><input  id="radio1"  type="radio" name="answer" value="one"></td>
-                    <td><input type="text" name="answer1" value="Neutralization reaction"></td>
-                    <td><button id="buttonx1" class="closeX" type="button" onclick="alert('Hello world!')">x</button></td>
-                </tr>
-                <tr>
-                    <td>=</td>
-                    <td><input  id="radio2" type="radio" name="answer" value="two"></td>
-                    <td><input type="text" name="answer2" value="Salt reaction"></td>
-                    <td><button id="buttonx2" class="closeX" type="button" onclick="alert('Hello world!')">x</button></td>
-                </tr>
-                <tr>
-                    <td>=</td>
-                    <td><input id="radio3" type="radio" name="answer" value="three"></td>
-                    <td><input type="text" name="answer3" value="Hydroxide reaction"></td>
-                    <td><button id="buttonx3" class="closeX" type="button" onclick="alert('Hello world!')">x</button></td>
-                </tr>
-                <tr>
-                    <td>=</td>
-                    <td><input  id="radio4" type="radio" name="answer" value="four"></td>
-                    <td><input type="text" name="answerOne" value="Single replacement reaction"></td>
-                    <td><button id="buttonx4" class="closeX" type="button" onclick="alert('Hello world!')">x</button></td>
-                </tr>
-            </table>
-
-                <a href=""
-
+                    <textarea class="round len1"  id="descriptionTxtArea" rows="3" cols="50">A reaction between an acid and a base is called a.
+                    </textarea>
+                </p>
+                <label for="hintText">Hint</label><br>
+                <input class="round len1"  type="text" id="hintText" value="We did a lab experiment about this">
+                <p>
+                    <label>Answers*</label>
             </div>
+            <div  class="len1" id="divAnswerLeft">
+                <div id="divAnswer1">
+                    <label style="padding-right:5px" for="radio1">&#9776;</label>
+                    <input style="padding-right:5px" id="radio1" type="radio" name="answer" value="one"/>
+                    <input class="answerText round" type="text" id="answer1" value="Neutralization reaction"/>
+                    <button  id="buttonx1" class="closeX" type="button" onclick="ShowHideAnswer('divAnswer1')">x</button>
+                </div>
+                <div id="divAnswer2">
+                    <label style="padding-right:5px" for="radio2">&#9776;</label>
+                    <input style="padding-right:5px" id="radio2" type="radio" name="answer" value="one"/>
+                    <input class="answerText round" id="answer2" value="Salt reaction"/>
+                    <button  id="buttonx2" class="closeX" type="button" onclick="ShowHideAnswer('divAnswer2')">x</button>
+                </div>
+                <div id="divAnswer3">
+                    <label style="padding-right:5px" for="radio3">&#9776;</label>
+                    <input style="padding-right:5px" id="radio3" type="radio" name="answer" value="one"/>
+                    <input class="answerText round" type="text" id="answer3" value="Hydroxide reaction"/>
+                    <button id="buttonx3" class="closeX" type="button" onclick="ShowHideAnswer('divAnswer3')">x</button>
+                </div>
+                <div id="divAnswer4">
+                    <label style="padding-right:5px" for="radio4">&#9776;</label>
+                    <input style="padding-right:5px" id="radio4" type="radio" name="answer" value="one"/>
+                    <input class="answerText round" type="text" id="answer4" value="Single replacement reaction"/>
+                    <button id="buttonx4" class="closeX" type="button" onclick="ShowHideAnswer('divAnswer4')">x</button>
+                </div>
+                <div id="divAnswer5" style="visibility: hidden">
+                    <label style="padding-right:5px" for="radio5">&#9776;</label>
+                    <input style="padding-right:5px" id="radio5" type="radio" name="answer" value="one"/>
+                    <input class="answerText round" type="text" id="answer5" value=""/>
+                    <button id="buttonx5" class="closeX" type="button" onclick="ShowHideAnswer('divAnswer5')">x</button>
+                </div>
+            </div>
+            <br>
+            <div class="paddingLeft" id="div2left">
+                <button class="linkLooking" onclick="ShowHideAnswer(null)">Add Answer</button>
+                <p>
+                    <input type="checkbox" id="randomCheck" onclick="randomAnswer()"
+                           value="random">Randomize answers for each student<br>
+                <p>
+                    <label for=selectId>Enumeration</label><br>
+                    <select  class="round" style="margin-top: 10px; width: 100px" id="selectId">
+                        <option value="normal">a,b,c,d,e,f</option>
+                        <option value="reverse">f,e,d,c,b,a</option>
+                    </select>
+                <p>
+                    <label for=points>Default Points*</label><br/>
+                    <input class="round" style="width: 50px" type="text" id="points" value="1">
 
+                <div id="buttonsLine">
+                    <div class="inner">
+                        <button class="round" type="submit" id="msgBtnSave" onClick="save()">Save</button>
+                    </div>
+                    <div class="inner">
+                        <button class="round" type="submit" id="msgBtnNew" onClick="return false;">Save and New</button>
+                    </div>
+                    <div class="inner">
+                        <button class="round" id="msgBtnBack">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
 
+
+    <div id="right">
+        <div class ="paddingLeft">
+            <label id="rLabel"></label>
+            <div>
+                <input id="radioRightA" type="radio" name="rval" value="a)"/>
+                <label id="rLabelA" for="radioRightA"></label><br><br>
+                <input id="radioRightB" type="radio" name="rval" value="b)"/>
+                <label id="rLabelB" for="radioRightB"></label><br><br>
+                <input id="radioRightC" type="radio" name="rval" value="c)"/>
+                <label id="rLabelC" for="radioRightC"></label><br><br>
+                <input id="radioRightD" type="radio" name="rval" value="d)"/>
+                <label id="rLabelD" for="radioRightD"></label><br><br>
+            </div>
+            <p>
+                <label id="rightHint">Hint</label><br><br>
+                <label class="paddingTop" id="rHint"></label>
         </div>
     </div>
-    we are in main
+
 </main>
 </body>
 
